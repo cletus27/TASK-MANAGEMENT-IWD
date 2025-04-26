@@ -11,16 +11,15 @@
     <button class="sidebar-toggle" id="sidebar-toggle">☰</button>
 
     <!--Sidebar-->
-    <div class="sidebar" id="sidebar">
+    <div class="sidebar" id="sidebar"</section>>
         <div class="logo">
-            <svg viewbox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:#6366f1">
+            <svg viewbox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:#6366f1"></svg>
                 <circle cx="12" cy="12" r="10"></circle>
                 <path d="M16 12l-4 4-4-4"></path>
                 <path d="M16 8v8" ></path>        
             </svg>
             <span class="logo-text">CM TASK MANAGEMENT</span>
         </div>
-
         <div class="sidebar-heading">MAIN MENU</div>
         <ul class="sidebar-nav">
             
@@ -72,8 +71,97 @@
                 <div class="label-color" style="background-color: #f97316;"></div>
                 <div class="label-text">Design</div>
             </div>
-        
     </div>
-    
+
+    <!-- Main content -->
+     <div class="main-content">
+        <div class="top-bar">
+            <h1 class="page-title" id="page-title">Task</h1>
+            <div class="top-actions">
+                <button class="btn-add" id="main-add-btn">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                        <line x1="5" y1="12" x2="19" y2="12"></line>                   
+                    </svg>
+                    Add Task
+                </button>
+                <div class="notification">
+                    <svg viewbox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:#6366f1"></svg>
+                    <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                    <path d="M3.73 21a2 2 0 0 1-3.46 0" ></path>        
+                </svg> 
+                <div class="notification-badge">2</div>
+                </div>
+                <img src="images/logo.png" alt="User" class="user-avatar">
+            </div>
+        </div>
+
+        <div class="tabs">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="2" width="7" height="7"></rect>
+                <rect x="14" y="3" width="7" height="7" rx="2"></rect>
+                <rect x="14" y="14" width="7" height="7"></rect>
+                <rect x="3" y="14" width="7" height="7"></rect>
+            </svg>
+            Board
+        </div>
+        <div class="tab" data-view="analytics">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>                
+            </svg>
+            Analytics
+        </div>
+     </div>
+
+     <!-- Board Container (default view)-->
+      <div class="task-colum todo">
+        <div class="column-header">
+            <div class="column-title">To Do</div>
+            <button class="add-task-btn" data-column="todo">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <line x1="5" y1="12" x2="19" y2="12"></line>                   
+                </svg>
+            </button>
+        </div>
+        
+        <div class="column-tasks" id="todo-tasks">
+            <!--Task Cards will be added here via JS-->
+        </div>
+      </div>
+
+      <!-- Done Column -->
+    <div class="task-column done">
+        <div class="column-header">
+            <div class="column-title">Done</div>
+            <button class="add-task-btn" data-column="done">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <line x1="5" y1="12" x2="19" y2="12"></line>                   
+                </svg>
+            </button>
+        </div>
+        <div class="column-tasks" id="done-tasks">
+            <!-- Task Cards will be added here via JS-->
+        </div>
+    </div>
+
+    <!-- Analytics Container (hidden by default)-->
+     <div class="analytic container hidden" id="analytics-view">
+        <div class="analytics-grid">
+            <!-- Complition Rate Card -->
+             <div class="analytics-card">
+                <div class="analytics-card-title">Completion Rate</div>
+             </div>
+             <div class="completion-rate" id="completion-rate">0%</div>
+        </div>
+        <div class="stats-item">
+            <span class="stats-label">Completed Tasks</span>
+            <span class="stats-value" id="completed-tasks">0</span>
+            
+        </div>
+     </div>
+
+     <!-- Tasks by Priority Card-->
 </body>
 </html>
