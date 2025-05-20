@@ -1,167 +1,209 @@
+<!-- @format -->
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CM TASK MANAGEMENT</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <!--Sidebar Toggle-->
-    <button class="sidebar-toggle" id="sidebar-toggle">☰</button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Login - Task Manager</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: 'Segoe UI', sans-serif;
+      }
 
-    <!--Sidebar-->
-    <div class="sidebar" id="sidebar"</section>>
-        <div class="logo">
-            <svg viewbox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:#6366f1"></svg>
-                <circle cx="12" cy="12" r="10"></circle>
-                <path d="M16 12l-4 4-4-4"></path>
-                <path d="M16 8v8" ></path>        
-            </svg>
-            <span class="logo-text">CM TASK MANAGEMENT</span>
-        </div>
-        <div class="sidebar-heading">MAIN MENU</div>
-        <ul class="sidebar-nav">
-            
-            <li><a href="#" class="nav-link" data-view="calendar">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <rect x="3" y="4" width="18" height="18" rx="2"></rect>
-                    <line x1="16" y1="2" x2="16" y2="6"></line>
-                    <line x1="8" y1="2" x2="8" y2="6"></line>
-                    <line x1="3" y1="10" x2="21" y2="10"></line>
-                </svg>
-                Calendar
-            </a></li>
-            <li><a href="#" class="nav-link" data-view="team">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                    <circle cx="12" cy="7" r="4"></circle>            
-                </svg>
-                Team
-            </a></li>
-            <li><a href="#" class="nav-link active" data-view="tasks" id="tasks-link">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                    <polyline points="14 2 14 8 20 8"></polyline>
-                    <line x1="16" y1="13" x2="8" y2="13"></line>
-                    <line x1="16" y1="17" x2="8" y2="17"></line> 
-                    <polyline points="10 9 9 9 8 9"></polyline>                  
-                </svg>
-                Tasks
-            </a></li>
-        
-            <li><a href="#" class="nav-link" data-view="active-tasks">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="9 11 12 14 22 4"></polyline> 
-                    <path d="M21 12v7a2  2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>               
-                </svg>
-                Active Tasks
-            </a></li>
-        </ul>
-            <div class="sidebar-heading">LABEL</div>
-            <div class="label-item">
-                <div class="label-color" style="background-color: #0ea5e9;"></div>
-                <div class="label-text">Marketing</div>
-            </div>
-            <div class="label-item">
-                <div class="label-color" style="background-color: #786b4b;"></div>
-                <div class="label-text">Development</div>
-            </div>
-            <div class="label-item">
-                <div class="label-color" style="background-color: #f97316;"></div>
-                <div class="label-text">Design</div>
-            </div>
-    </div>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        transition: background-image 1s ease-in-out;
+      }
 
-    <!-- Main content -->
-     <div class="main-content">
-        <div class="top-bar">
-            <h1 class="page-title" id="page-title">Task</h1>
-            <div class="top-actions">
-                <button class="btn-add" id="main-add-btn">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <line x1="12" y1="5" x2="12" y2="19"></line>
-                        <line x1="5" y1="12" x2="19" y2="12"></line>                   
-                    </svg>
-                    Add Task
-                </button>
-                <div class="notification">
-                    <svg viewbox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:#6366f1"></svg>
-                    <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
-                    <path d="M3.73 21a2 2 0 0 1-3.46 0" ></path>        
-                </svg> 
-                <div class="notification-badge">2</div>
-                </div>
-                <img src="images/logo.png" alt="User" class="user-avatar">
-            </div>
-        </div>
+      .login-container {
+        background-color: rgba(239, 241, 255, 0.6);
+        padding: 2.5rem 2rem;
+        border-radius: 16px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+        width: 100%;
+        max-width: 400px;
+      }
 
-        <div class="tabs">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="3" y="2" width="7" height="7"></rect>
-                <rect x="14" y="3" width="7" height="7" rx="2"></rect>
-                <rect x="14" y="14" width="7" height="7"></rect>
-                <rect x="3" y="14" width="7" height="7"></rect>
-            </svg>
-            Board
-        </div>
-        <div class="tab" data-view="analytics">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>                
-            </svg>
-            Analytics
-        </div>
-     </div>
+      .login-container h2 {
+        text-align: center;
+        margin-bottom: 1.5rem;
+        color: #1a4dcc;
+      }
 
-     <!-- Board Container (default view)-->
-      <div class="task-colum todo">
-        <div class="column-header">
-            <div class="column-title">To Do</div>
-            <button class="add-task-btn" data-column="todo">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="12" y1="5" x2="12" y2="19"></line>
-                    <line x1="5" y1="12" x2="19" y2="12"></line>                   
-                </svg>
-            </button>
-        </div>
-        
-        <div class="column-tasks" id="todo-tasks">
-            <!--Task Cards will be added here via JS-->
-        </div>
-      </div>
+      .form-group {
+        margin-bottom: 1.2rem;
+      }
 
-      <!-- Done Column -->
-    <div class="task-column done">
-        <div class="column-header">
-            <div class="column-title">Done</div>
-            <button class="add-task-btn" data-column="done">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="12" y1="5" x2="12" y2="19"></line>
-                    <line x1="5" y1="12" x2="19" y2="12"></line>                   
-                </svg>
-            </button>
-        </div>
-        <div class="column-tasks" id="done-tasks">
-            <!-- Task Cards will be added here via JS-->
-        </div>
-    </div>
+      .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+      }
 
-    <!-- Analytics Container (hidden by default)-->
-     <div class="analytic container hidden" id="analytics-view">
-        <div class="analytics-grid">
-            <!-- Complition Rate Card -->
-             <div class="analytics-card">
-                <div class="analytics-card-title">Completion Rate</div>
-             </div>
-             <div class="completion-rate" id="completion-rate">0%</div>
-        </div>
-        <div class="stats-item">
-            <span class="stats-label">Completed Tasks</span>
-            <span class="stats-value" id="completed-tasks">0</span>
-            
-        </div>
-     </div>
+      .form-group input {
+        width: 100%;
+        padding: 0.75rem;
+        border: 1px solid #6366f1;
+        border-radius: 8px;
+        outline: none;
+        transition: border 0.2s;
+      }
 
-     <!-- Tasks by Priority Card-->
-</body>
+      .form-group input:focus {
+        border-color: #6366f1;
+      }
+
+      .login-btn {
+        width: 100%;
+        padding: 0.75rem;
+        border: none;
+        border-radius: 8px;
+        background-color: #6366f1;
+        color: white;
+        font-size: 1rem;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+
+      .login-btn:hover {
+        background-color: #6366f1;
+      }
+
+      .bottom-text {
+        text-align: center;
+        margin-top: 1rem;
+        font-size: 0.9rem;
+      }
+
+      .bottom-text a {
+        color: #6366f1;
+        text-decoration: none;
+      }
+
+      .bottom-text a:hover {
+        text-decoration: underline;
+      }
+
+      .error-msg {
+        color: red;
+        text-align: center;
+        margin-bottom: 1rem;
+        font-size: 0.9rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="login-container">
+      <h2>Login to Task Manager</h2>
+      <div
+        id="error"
+        class="error-msg"
+      ></div>
+      <form id="loginForm">
+        <div class="form-group">
+          <label for="email">Email address</label>
+          <input
+            type="email"
+            id="email"
+            placeholder="enter your email"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            placeholder="Enter your password"
+            required
+          />
+        </div>
+        <button
+          type="submit"
+          class="login-btn"
+        >
+          Log In
+        </button>
+      </form>
+      
+
+    <script>
+      // Background image slideshow
+      const backgroundImages = [
+        'https://media.istockphoto.com/id/1453859222/photo/view-of-modern-photovoltaic-solar-panels-to-charge-battery-rows-of-sustainable-energy-solar.jpg?s=2048x2048&w=is&k=20&c=BifpqbJ7QByYHlUULQ2Y41G69w51WF4Di375exuDZ7w=',
+        'https://media.istockphoto.com/id/900114204/photo/high-power-station.jpg?s=2048x2048&w=is&k=20&c=iriqqaKQFYCSdr_7YOMYHxDEkX7KoILCCYBzgwb12i8=',
+        'images/switchyard.jpg',
+        'images/switchyard.jpg',
+      ];
+
+      let currentIndex = 0;
+      const body = document.body;
+
+      function changeBackground() {
+        body.style.backgroundImage = `url('${backgroundImages[currentIndex]}')`;
+        currentIndex = (currentIndex + 1) % backgroundImages.length;
+      }
+
+      changeBackground();
+      setInterval(changeBackground, 5000); // Every 5 seconds
+
+      // Login logic
+      const loginForm = document.getElementById('loginForm');
+      const errorDiv = document.getElementById('error');
+
+      const users = [
+        { email: 'admin@tmanager.com', password: '123654' },
+        { email: 'cletus@tmanager.com', password: '654123' },
+        { email: 'jeremiahm@tmanager.com', password: '654123' },
+        { email: 'catherinem@tmanager.com', password: '654123' },
+        { email: 'chileshem@tmanager.com', password: '654123' },
+        { email: 'CMM@tmanager.com', password: '654123' },
+        { email: 'guest@tmanager.com', password: '654123' },
+      ];
+
+      loginForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const email = document.getElementById('email').value.trim();
+        const password = document.getElementById('password').value.trim();
+
+        errorDiv.textContent = '';
+
+        if (!email || !password) {
+          errorDiv.textContent = 'Please fill in all fields.';
+          return;
+        }
+
+        if (password.length < 6) {
+          errorDiv.textContent = 'Password must be at least 6 characters.';
+          return;
+        }
+
+        const userFound = users.find(
+          (user) => user.email === email && user.password === password
+        );
+
+        if (userFound) {
+          // Redirect to your main dashboard
+          window.location.href = 'index2.html';
+        } else {
+          errorDiv.textContent = 'Invalid email or password.';
+        }
+      });
+    </script>
+  </body>
 </html>
