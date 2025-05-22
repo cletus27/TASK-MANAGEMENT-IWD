@@ -374,6 +374,24 @@
       </div>
     </div>
   </div>
+<script>
+  const backgroundImages = [
+    'images/switchyard.jpg',
+    'images/markus-spiske-kK7uPfb2YWU-unsplash.jpg',
+    'images/Roof top solar.jpg',
+    'images/ryutaro-uozumi-9vQG6v1md1s-unsplash.jpg',
+  ];
+
+  let currentIndex = 0;
+  const body = document.body;
+
+  function changeBackground() {
+    currentIndex = (currentIndex + 1) % backgroundImages.length;
+    body.style.backgroundImage = `url('${backgroundImages[currentIndex]}')`;
+  }
+
+  setInterval(changeBackground, 5000); // change every 5 seconds
+</script>
 
  
 
