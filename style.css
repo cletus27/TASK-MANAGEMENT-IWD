@@ -66,6 +66,7 @@ gap: 10px;
 /* Modal styles for team management */
 #add-member-form .form-group {
 margin-bottom: 15px;
+
 }
 
 /* Sidebar styles */
@@ -79,6 +80,7 @@ margin-bottom: 15px;
   overflow-y: auto;
   transition: transform 0.3s ease;
   z-index: 100;
+
 }
 
 .sidebar-toggle {
@@ -180,12 +182,12 @@ margin-bottom: 15px;
 
 .sidebar-nav a:hover,
 .sidebar-nav a.active {
-  background-color: #f0f0f0;
+  background-color: #f2e8e8;
 }
 
 .sidebar-nav a.active {
   color: #6366f1;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .sidebar-nav a i {
