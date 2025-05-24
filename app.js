@@ -1478,6 +1478,11 @@
       const priority = document.getElementById('task-priority').value;
       const dueDate = document.getElementById('task-due-date').value;
       const column = document.getElementById('task-column').value;
+       // will be used for guest user input 
+     /* const name = document.getElementById('task-name').value;
+      const contact = document.getElementById('task-contact').value;
+      const address = document.getElementById('task-address').value;
+      const location = document.getElementById('task-location').value; */
 
       // Validate required fields
       if (!title) {
@@ -1498,7 +1503,18 @@
       if (selectedDate < today) {
         alert('Please select a date that is not in the past');
         return;
+
+         //will be used for guest user input
+      /*if (!contact) {
+      alert('Please enter a contact number');
+      return;
       }
+        
+        if (!address) {
+          alert('Please enter an address');
+          return; */
+      }
+      
 
       // Create task object
       const taskData = {
