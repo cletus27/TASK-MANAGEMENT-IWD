@@ -1,5 +1,3 @@
-  /** @format */
-
   document.addEventListener('DOMContentLoaded', function () {
     // Elements
     const addTaskModal = document.getElementById('add-task-modal');
